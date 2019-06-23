@@ -1,0 +1,18 @@
+{% extends 'myapp/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">删除</legend>
+            <h2>确认删除"{{ object.title }}"？</h2>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit">删除</button>
+            <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">取消</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}
