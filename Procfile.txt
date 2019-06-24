@@ -1,1 +1,1 @@
-web: gunicorn BANDUP.wsgi
+web gunicorn BandUp.wsgi
