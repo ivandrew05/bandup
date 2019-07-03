@@ -137,7 +137,7 @@ EMAIL_PORT = 25
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = '594543112@qq.com'
 EMAIL_HOST_PASSWORD = 'zwdlgbfmofoabbcg'
-# DEFAULT_FROM_EMAIL = '594543112@qq.com'
+DEFAULT_FROM_EMAIL = '594543112@qq.com'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
