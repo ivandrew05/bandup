@@ -1,5 +1,5 @@
 """
-WSGI config for band_up project.
+WSGI config for bandup project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'band_up.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bandup.settings')
 
 application = get_wsgi_application()
