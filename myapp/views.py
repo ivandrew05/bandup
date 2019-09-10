@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from .forms import PostForm
 
 
 def home(request):
@@ -73,3 +74,17 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'myapp/about.html', {'title': 'about'})
+
+
+def Post(request):
+    if request.method == 'POST':
+        post_form = PostForm(request.POST, request.FILES)
+        if post_form.is_valid():
+            post_form.save()
+            messages.success(request, f'图片上传成功！')
+
+    context = {
+        'post_form': post_form
+    }
+
+    return render(request, 'myapp/home.html', context)
