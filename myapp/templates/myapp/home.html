@@ -16,7 +16,7 @@
 </article>
 {% endfor %} -->
 
-{% for post in posts %}
+<!-- {% for post in posts %}
 <div class="container-fluid padding">
     <div class="row padding">
         <div class="col-md-4">
@@ -31,7 +31,33 @@
         </div>
     </div>
 </div>
-{% endfor %}
+{% endfor %} -->
+
+
+<div class="container">
+    {%  for post in posts  %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row text-center">
+        {%  endif %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-content">
+
+                    <img class="card-img-top" src="media/team1.png" alt="">
+                    <!-- <h4>Post {{ forloop.counter }}</h4> -->
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.content }}</p>
+
+                </div>
+            </div>
+        </div>
+        {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing -->
+    <hr>
+    {%  endif %}
+    {%  endfor %}
+</div>
+
+
 
 <!--- Cards -->
 <div class="container-fluid padding">
