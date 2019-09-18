@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {%block content%}
 
+
 <!-- {% for post in posts %}
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ post.author.profile.image.url}}">
@@ -16,52 +17,30 @@
 </article>
 {% endfor %} -->
 
-<!-- {% for post in posts %}
+
 <div class="container-fluid padding">
-    <div class="row padding">
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="{{ post.author.profile.image.url}}" alt="">
-                <div class="card-body">
-                    <h4><a class="card-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
-                    <p class="card-text">{{ post.content }}</p>
-                    <a href="#" class="btn btn-outline-secondary">See Profile</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %} -->
-
-
-<div class="container">
     {%  for post in posts  %}
     {% if forloop.counter0|divisibleby:3 %}
-    <div class="row text-center">
+    <div class="row padding" style="margin-bottom: 20px">
         {%  endif %}
         <div class="col-md-4">
             <div class="card">
-                <div class="card-content">
-
-                    <img class="card-img-top" src="media/team1.png" alt="">
-                    <!-- <h4>Post {{ forloop.counter }}</h4> -->
-                    <h3>{{ post.title }}</h3>
-                    <p>{{ post.content }}</p>
-
+                <img class="card-img-top" src="media/team1.png" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <p class="card-text">{{ post.content }}</p>
+                    <a href="{% url 'post-detail' post.id %}" class="btn btn-outline-secondary">Learn More</a>
                 </div>
             </div>
         </div>
-        {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing -->
-    <hr>
+        {%  if forloop.counter|divisibleby:3 or forloop.last %}</div>
     {%  endif %}
     {%  endfor %}
 </div>
 
-
-
 <!--- Cards -->
 <div class="container-fluid padding">
-    <div class="row padding">
+    <div class="row padding" style="margin-bottom: 20px">
         <div class="col-md-4">
             <div class="card">
                 <img class="card-img-top" src="media/team1.png" alt="">
