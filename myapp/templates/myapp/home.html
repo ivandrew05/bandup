@@ -18,11 +18,11 @@
 {% endfor %} -->
 
 
-<div class="container-fluid padding">
-    {%  for post in posts  %}
+<div class="container-fluid padding" style="padding:1px">
+    {% for post in posts %}
     {% if forloop.counter0|divisibleby:3 %}
     <div class="row padding" style="margin-bottom: 20px">
-        {%  endif %}
+        {% endif %}
         <div class="col-md-4">
             <div class="card">
                 <img class="card-img-top" src="media/team1.png" alt="">
@@ -33,45 +33,10 @@
                 </div>
             </div>
         </div>
-        {%  if forloop.counter|divisibleby:3 or forloop.last %}</div>
-    {%  endif %}
-    {%  endfor %}
-</div>
-
-<!--- Cards -->
-<div class="container-fluid padding">
-    <div class="row padding" style="margin-bottom: 20px">
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="media/team1.png" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">John is a designer with almost 10 years of digital design experience.</p>
-                    <a href="#" class="btn btn-outline-secondary">See Profile</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="media/team2.png" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Mary Jo</h4>
-                    <p class="card-text">Mary is a design with almost 10 years of digital design experience.</p>
-                    <a href="#" class="btn btn-outline-secondary">See Profile</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="media/team3.png" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Phil Ho</h4>
-                    <p class="card-text">Phil is a developer with over 5 years of web development experience.</p>
-                    <a href="#" class="btn btn-outline-secondary">See Profile</a>
-                </div>
-            </div>
-        </div>
+        {%  if forloop.counter|divisibleby:3 or forloop.last %}
     </div>
+    {% endif %}
+    {% endfor %}
 </div>
 
 
