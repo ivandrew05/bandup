@@ -17,3 +17,18 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
+
+
+class Teacher(models.Model):
+    teacher_image = models.ImageField(default='bandup/media/default.jpg', upload_to='profile_pics')
+    teacher_name = models.CharField(max_length=100)
+    years_of_playing = models.CharField(max_length=100)
+    course_content = models.CharField(max_length=5000)
+    charging_fee = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.teacher_name
+
+    def get_absolute_url(self):
+        return reverse('teacher-detail', kwargs={'pk': self.pk})
+
