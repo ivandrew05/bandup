@@ -1,15 +1,21 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, Teacher
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import PostForm
 
 
+# def home(request):
+#     context = {
+#         'posts': Post.objects.all()
+#     }
+#     return render(request, 'myapp/home.html', context)
+
 def home(request):
     context = {
-        'posts': Post.objects.all()
+        'teachers': Teacher.objects.all()
     }
     return render(request, 'myapp/home.html', context)
 

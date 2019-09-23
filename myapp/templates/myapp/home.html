@@ -17,8 +17,7 @@
 </article>
 {% endfor %} -->
 
-
-<div class="container-fluid padding" style="padding:1px">
+<!-- <div class="container-fluid padding" style="padding:1px">
     {% for post in posts %}
     {% if forloop.counter0|divisibleby:3 %}
     <div class="row padding" style="margin-bottom: 20px">
@@ -30,6 +29,27 @@
                     <h4 class="card-title">{{ post.title }}</h4>
                     <p class="card-text">{{ post.content }}</p>
                     <a href="{% url 'post-detail' post.id %}" class="btn btn-outline-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        {%  if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div> -->
+
+<div class="container-fluid padding" style="padding:1px">
+    {% for teacher in teachers %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row padding" style="margin-bottom: 20px">
+        {% endif %}
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="media/team2.png" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{ teacher.title }}</h4>
+                    <p class="card-text">{{ teacher.content }}</p>
+                    <a href="{% url 'teacher-detail' teacher.id %}" class="btn btn-outline-secondary">了解更多</a>
                 </div>
             </div>
         </div>
