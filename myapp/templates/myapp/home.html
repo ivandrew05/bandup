@@ -47,8 +47,8 @@
             <div class="card">
                 <img class="card-img-top" src="media/team2.png" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">{{ teacher.title }}</h4>
-                    <p class="card-text">{{ teacher.content }}</p>
+                    <h4 class="card-title">{{ teacher.teacher_name }}</h4>
+                    <p class="card-text">{{ teacher.course_content }}</p>
                     <a href="{% url 'teacher-detail' teacher.id %}" class="btn btn-outline-secondary">了解更多</a>
                 </div>
             </div>

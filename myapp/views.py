@@ -28,6 +28,14 @@ class PostListView(ListView):
     paginate_by = 9
 
 
+class TeacherListView(ListView):
+    model = Teacher
+    template_name = 'myapp/home.html'    # <app>/<model>_<viewtype>.html
+    context_object_name = 'teachers'
+    ordering = ['-date_posted']
+    paginate_by = 9
+
+
 class UserPostListView(ListView):
     model = Post
     template_name = 'myapp/user_posts.html'    # <app>/<model>_<viewtype>.html
@@ -41,6 +49,10 @@ class UserPostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
+
+
+class TeacherDetailView(DetailView):
+    model = Teacher
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):

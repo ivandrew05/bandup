@@ -10,8 +10,7 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    cover_image = models.ImageField(
-        default='bandup/media/default.jpg', upload_to='profile_pics')
+    cover_image = models.ImageField(default='bandup/media/default.jpg', upload_to='profile_pics')
 
     def __str__(self):
         return self.title
@@ -27,6 +26,7 @@ class Teacher(models.Model):
     course_content = models.CharField(max_length=5000)
     charging_fee = models.CharField(max_length=100)
     teaching_address = models.CharField(max_length=1000, default='Shanghai')
+    date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.teacher_name
